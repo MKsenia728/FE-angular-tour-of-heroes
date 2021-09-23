@@ -13,6 +13,7 @@
     padding: 0.3em 0;
     height: 1.6em;
     border-radius: 4px;
+    transition: background-color 0.5s;
     
     &:hover {
       color: #2c3a41;
@@ -20,7 +21,7 @@
       left: 0.1em;
     }
     
-    .selected {
+    &.selected {
       background-color: black;
       color: white;
       
