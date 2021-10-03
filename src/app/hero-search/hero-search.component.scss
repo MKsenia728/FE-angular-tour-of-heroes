@@ -1,13 +1,14 @@
 label {
   display: block;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+  color: #42545C;
 
 }
 input {
-  padding: .5rem;
+  padding: 0.5rem;
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
@@ -28,7 +29,7 @@ li {
   display: inline-block;
   width: 100%;
   max-width: 600px;
-  padding: .5rem;
+  padding: 0.5rem;
   box-sizing: border-box;
   text-decoration: none;
   color: black;

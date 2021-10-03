@@ -2,7 +2,11 @@
 
 <div>
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+  <input id="new-hero" #heroName/>
+  
+  <div class="validation-messages" *ngIf="checkMessage">
+    {{checkMessage}} Повторите ввод.
+  </div>
 
   <button class="add-button" (click)="add(heroName.value); heroName.value=''">
     Add hero

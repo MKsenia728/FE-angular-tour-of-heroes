@@ -1,17 +1,32 @@
-h1 {
-  color: #369;
+*{
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #336699;
+  display: block;
   font-size: 250%;
   margin-bottom: 0;
+  transition: transform 0.5s, color 1s;
+  
+  &:hover {
+    transform: translateX(2%);
+    color: transparent;
+    
+  }
 }
 nav a {
   padding: 1rem;
   text-decoration: none;
+  font-weight: 500;
   margin-top: 10px;
+  margin-right: 10px;
   display: inline-block;
   background-color: #e8e8e8;
-  color: #3d3d3d;
+  color: #336699;
+  border: 1px solid #336699;
   border-radius: 4px;
+  transition: background-color 0.5s, color 0.5s;
   
   &:hover {
     color: white;
@@ -22,3 +37,6 @@ nav a {
     background-color: black;
   }
 }
+
+
+

@@ -3,8 +3,14 @@
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+    <input #name="ngModel" id="hero-name" 
+     [(ngModel)]="hero.name" title="Update Hero" placeholder="name">
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
-</div>
+  
+  <div class="validation-messages" *ngIf="checkMessage">
+    {{checkMessage}} Повторите ввод или нажмите <b>go back</b>
+  </div>
+  
+  <button (click)="goBack()">go back</button> 
+  <button (click)="save()">save update</button>
+</div> 

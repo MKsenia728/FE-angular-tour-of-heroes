@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Location } from '@angular/common';
+import { AbstractControl, FormControl, ValidationErrors, Validators } from '@angular/forms';
+import { checkName } from '../validation';
 
 
 @Component({
@@ -15,7 +17,9 @@ import { Location } from '@angular/common';
 export class HeroDetailComponent implements OnInit {
   
   @Input() hero?: Hero;
-
+ 
+  checkMessage = '';
+ 
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
@@ -24,6 +28,11 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getHero();
   }
+  
+  // ngAfterViewInit(): void {
+  //   this.checkMessage = checkName(this.hero)
+  //   console.log(this.checkMessage);
+  // }
   
   getHero(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
@@ -37,9 +46,12 @@ export class HeroDetailComponent implements OnInit {
   
   save():void {
     if (this.hero) {
+      
+      this.checkMessage = checkName(this.hero.name);
+      
+      if (!this.checkMessage)
       this.heroService.updateHero(this.hero)
         .subscribe(() => this.goBack());
     }
   }
-
 }
