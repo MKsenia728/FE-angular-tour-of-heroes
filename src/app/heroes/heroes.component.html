@@ -2,8 +2,8 @@
 
 <div>
   <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName/>
-  
+  <input id="new-hero" #heroName />
+
   <div class="validation-messages" *ngIf="checkMessage">
     {{checkMessage}} Повторите ввод.
   </div>
@@ -16,9 +16,7 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}</a>
-    <button class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
+      <span class="badge">{{hero.id}}</span> {{hero.name}}</a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
-

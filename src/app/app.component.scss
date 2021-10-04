@@ -1,18 +1,13 @@
-*{
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 h1 {
   color: #336699;
   display: block;
   font-size: 250%;
   margin-bottom: 0;
   transition: transform 0.5s, color 1s;
-  
+
   &:hover {
     transform: translateX(2%);
     color: transparent;
-    
   }
 }
 nav a {
@@ -27,16 +22,12 @@ nav a {
   border: 1px solid #336699;
   border-radius: 4px;
   transition: background-color 0.5s, color 0.5s;
-  
+
   &:hover {
     color: white;
-    background-color: #42545C;
+    background-color: #42545c;
   }
-  
   .active {
     background-color: black;
   }
 }
-
-
-

@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
 import { MessageService } from './message.service';
-import { HEROES } from './mock-heroes';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +47,6 @@ export class HeroService {
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
-  
-
   
   updateHero(hero: Hero): Observable<any> {
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(

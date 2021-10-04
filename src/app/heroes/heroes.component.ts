@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { checkName } from '../validation';
-
-
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, AfterViewChecked {
   
   heroes: Hero[] = [];
   checkMessage = '';
@@ -19,6 +17,9 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
+  }
+  ngAfterViewChecked(): void {
+    this.checkMessage = ''
   }
   
   getHeroes(): void {
@@ -41,5 +42,4 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
   }
-
 }

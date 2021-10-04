@@ -1,9 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Location } from '@angular/common';
-import { AbstractControl, FormControl, ValidationErrors, Validators } from '@angular/forms';
 import { checkName } from '../validation';
 
 
@@ -14,7 +13,7 @@ import { checkName } from '../validation';
 })
 
 
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent implements OnInit, AfterViewChecked {
   
   @Input() hero?: Hero;
  
@@ -28,11 +27,10 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getHero();
   }
-  
-  // ngAfterViewInit(): void {
-  //   this.checkMessage = checkName(this.hero)
-  //   console.log(this.checkMessage);
-  // }
+
+  ngAfterViewChecked(): void {
+    this.checkMessage = ''
+  }
   
   getHero(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
@@ -46,9 +44,7 @@ export class HeroDetailComponent implements OnInit {
   
   save():void {
     if (this.hero) {
-      
       this.checkMessage = checkName(this.hero.name);
-      
       if (!this.checkMessage)
       this.heroService.updateHero(this.hero)
         .subscribe(() => this.goBack());

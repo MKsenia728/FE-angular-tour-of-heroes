@@ -3,35 +3,16 @@
   list-style-type: none;
   padding: 0;
   width: 15em;
-  
   li {
     cursor: pointer;
     position: relative;
     transition: background-color 0.5s;
-    
     &:hover {
       color: #2c3a41;
       background-color: #e6e6e6;
       left: 0.1em;
     }
-    
-    // &.selected {
-    //   background-color: black;
-    //   color: white;
-      
-    //   &:hover {
-    //     background-color: #505050;
-    //     color: white;
-    //   }
-      
-    //   &:active {
-    //     background-color: black;
-    //     color: white;
-    //   }
-    // } 
-    
   }
-  
   a {
     color: #333333;
     text-decoration: none;
@@ -42,24 +23,22 @@
     border-radius: 4px;
     display: block;
     width: 100%;
-    
+
     &:hover {
       color: #2c3a41;
       background-color: #e6e6e6;
     }
-    
     &:active {
       background-color: #525252;
       color: #fafafa;
     }
   }
-  
   .badge {
     display: inline-block;
     font-size: small;
     color: white;
     padding: 0.8em 0.7em 0 0.7em;
-    background-color:#405061;
+    background-color: #405061;
     line-height: 1em;
     position: relative;
     left: -1px;
@@ -69,37 +48,44 @@
     border-radius: 4px 0 0 4px;
   }
 }
-
+h2 {
+  color: #405061;
+  font-weight: 500;
+  font-size: 2rem;
+}
+label {
+  color: #405061;
+  font-weight: 500;
+  font-size: 1rem;
+}
 input {
   display: block;
-  width: 100%;
+  width: 300px;
   padding: 0.5rem;
   margin: 1rem 0;
   box-sizing: border-box;
 }
-
 .add-button {
   padding: 0.5rem 1.5rem;
   font-size: 1rem;
   margin-bottom: 2rem;
-  
+  margin-top: 1rem;
+
   &:hover {
     color: white;
-    background-color: #42545C;
+    background-color: #42545c;
   }
- }
- 
- button.delete {
-   position: absolute;
-   left: 210px;
-   top: 5px;
-   background-color: white;
-   color:  #525252;
-   font-size: 1.1rem;
-   padding: 1px 10px 3px 10px;
-   
-   &:hover {
+}
+button.delete {
+  position: absolute;
+  left: 210px;
+  top: 5px;
+  background-color: white;
+  color: #525252;
+  font-size: 1.1rem;
+  padding: 1px 10px 3px 10px;
+  &:hover {
     background-color: #525252;
     color: white;
   }
- }
+}
